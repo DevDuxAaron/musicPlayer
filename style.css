@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 
+:root {
+    --primary: #7C9EB2;
+    --secondary: #52528C;
+    --aux: #372554;
+    --dark: #231123;
+    --light: #C4F1BE;
+    --white: #fafafa;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -10,16 +19,16 @@ body {
     width: 100vw;
     margin: 0;
     font-family: 'Lato', sans-serif;
-    background-image: linear-gradient(0deg, rgb(247,247,247) 23.8%, rgb(252,221,221) 92%);
+    background-image: linear-gradient(0deg, var(--primary) 23.8%, var(--secondary) 92%);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 .music-container {
-    background-color: #fff;
+    background-color: var(--white);
     border-radius: 15px;
-    box-shadow: 0 20px 20px 0 rgba(252, 169, 169, 0.6);
+    box-shadow: 0 20px 20px 0 var(--aux);
     display: flex;
     padding: 1rem 3rem;
     position: relative;
@@ -34,7 +43,7 @@ body {
 }
 .img-container::after {
     content: '';
-    background-color: #fff;
+    background-color: var(--white);
     height: 20px;
     width: 20px;
     position: absolute;
@@ -51,7 +60,7 @@ body {
     position: absolute;
     bottom: 0;
     left: 0;
-    animation: rotate 3s linear infinite;
+    animation: rotate 4s linear infinite;
     animation-play-state: paused;
 }
 .music-container.play .img-container img{
@@ -72,13 +81,16 @@ body {
     z-index: 1;
 }
 .action-btn {
-    background-color: #fff;
+    background-color: var(--white);
     border: none;
     color: #dfdbdf;
     font-size: 20px;
     cursor: pointer;
     padding: 10px;
     margin: 0 20px;
+}
+.action-btn:hover {
+    color: #969496;
 }
 .action-btn-big {
     color: #cdc2d0;
@@ -109,7 +121,7 @@ body {
     transform: translateY(-100%);
 }
 .progress-container {
-    background-color: #fff;
+    background-color: var(--white);
     border-radius: 5px;
     cursor: pointer;
     margin: 10px 0;
@@ -117,13 +129,15 @@ body {
     width: 100%;
 }
 .progress {
-    background-color: #fe8daa;
+    background-color: var(--secondary);
     border-radius: 5px;
     height: 100%;
     width: 0%;
+    transform: width;
     transition: width 0.1s linear;
 }
 footer {
+    color: var(--dark);
     text-align: center;
     font-size: 1rem;
 }
